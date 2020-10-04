@@ -11,9 +11,11 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  archive:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    env: 
+      zipname: 'release_test.zip'
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -23,8 +25,8 @@ jobs:
       - name: Zip Release
         uses: TheDoctor0/zip-release@0.4.1
         with: 
-          filename: 'release_test.zip'        
+          filename: ${{env.zipname}}
       - uses: actions/upload-artifact@v2
         with: 
-          name: test_artifact
-          path: ./release_test.zip
+          name: ${{env.zipname}}
+          path: ./${{env.zipname}}
