@@ -31,3 +31,9 @@ jobs:
         with: 
           name: ${{env.zipname}}
           path: ./${{env.zipname}}
+      - uses: actions/upload-artifact@v2
+        with: 
+          name: 'test'
+          path: |
+            ./a.txt
+            ./b.txt
