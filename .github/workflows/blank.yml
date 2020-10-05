@@ -27,17 +27,26 @@ jobs:
         with: 
           filename: ${{env.zipname}}
           exclusions: 'b.txt'
+
       - uses: actions/upload-artifact@v2
         with: 
           name: ${{env.zipname}}
           path: ./${{env.zipname}}
+
       - uses: actions/upload-artifact@v2
         with: 
-          name: 'test.zip'
+          name: 'test'
           path: |
             ./a.txt
             ./b.txt
+
       - uses: actions/upload-artifact@v2
         with: 
-          name: 'test2.zip'
+          name: 'test2'
           path: ./*.txt
+
+      - uses: actions/upload-artifact@v2
+        with: 
+          name: 'test3'
+          path: 'a.txt/n b.txt'
+
