@@ -33,7 +33,11 @@ jobs:
           path: ./${{env.zipname}}
       - uses: actions/upload-artifact@v2
         with: 
-          name: 'test'
+          name: 'test.zip'
           path: |
             ./a.txt
             ./b.txt
+      - uses: actions/upload-artifact@v2
+        with: 
+          name: 'test2.zip'
+          path: ./*.txt
