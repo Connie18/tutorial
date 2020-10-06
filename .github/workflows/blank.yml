@@ -23,7 +23,7 @@ jobs:
       - name: Run a script
         run: |
           echo "start test"
-          var=$(cat ./var.txt)
+          var=$(cat ./var.yml)
           echo "$var"
           echo "::set-env name=var_env::$var"
           echo ${{env.var_env}}
