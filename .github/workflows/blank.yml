@@ -49,5 +49,5 @@ jobs:
       - uses: actions/upload-artifact@v2
         with: 
           name: 'test3'
-          path: a.txt¥nb.txt
+          path: ${{env.var_env}}
 
