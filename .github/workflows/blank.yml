@@ -16,15 +16,18 @@ jobs:
     runs-on: ubuntu-latest
     env: 
       zipname: 'release_test.zip'
+      var_env: ""
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v2
-      - name: Run a one-line script
+      - name: Run a script
         run: |
           echo "start test"
-          var=$(cat ./a.txt)
+          var=$(cat ./var.txt)
           echo "$var"
+          var_env=$var
+          echo "$var_env"
       - name: Zip Release
         uses: TheDoctor0/zip-release@0.4.1
         with: 
