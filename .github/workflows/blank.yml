@@ -16,7 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     env: 
       zipname: 'release_test.zip'
-      var_env: ""
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -26,8 +25,7 @@ jobs:
           echo "start test"
           var=$(cat ./var.txt)
           echo "$var"
-          echo "${{env.var_env}}"
-          ${{env.var_env}}=$var
+          echo "::set-env name=var_env::$var"
           echo "${{env.var_env}}"
       - name: Zip Release
         uses: TheDoctor0/zip-release@0.4.1
