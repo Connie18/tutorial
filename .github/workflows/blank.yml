@@ -26,8 +26,9 @@ jobs:
           echo "start test"
           var=$(cat ./var.txt)
           echo "$var"
-          var_env=$var
-          echo "$var_env"
+          echo "${{env.var_env}}"
+          ${{env.var_env}}=$var
+          echo "${{env.var_env}}"
       - name: Zip Release
         uses: TheDoctor0/zip-release@0.4.1
         with: 
@@ -49,5 +50,5 @@ jobs:
       - uses: actions/upload-artifact@v2
         with: 
           name: 'test3'
-          path: ${{env.var_env}}
+          path: "test"
 
