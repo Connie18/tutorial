@@ -37,13 +37,8 @@ jobs:
         with: 
           name: 'test'
           path: |
-            ./a.txt
-            ./b.txt
-
-      - uses: actions/upload-artifact@v2
-        with: 
-          name: 'test2'
-          path: '*.txt'
+            a.txt
+            b.txt
 
       - uses: actions/upload-artifact@v2
         with: 
