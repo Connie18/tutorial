@@ -21,7 +21,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run a one-line script
-        run: echo Hello, world!
+        run: var=$(cat ./a.txt)
+      - name: variable
+        run: echo $var
       - name: Zip Release
         uses: TheDoctor0/zip-release@0.4.1
         with: 
