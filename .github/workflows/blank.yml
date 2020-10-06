@@ -25,7 +25,7 @@ jobs:
           echo "start test"
           var=$(cat ./var.txt)
           echo "$var"
-          echo "var_env=$var" >> $GITHUB_ENV
+          echo "::set-env name=var_env::$var}"
           echo ${{env.var_env}}
       - name: Zip Release
         uses: TheDoctor0/zip-release@0.4.1
