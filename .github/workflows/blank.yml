@@ -26,7 +26,7 @@ jobs:
           var=$(cat ./var.txt)
           echo "$var"
           echo "::set-env name=var_env::$var"
-          echo "${{env.var_env}}"
+          echo ${{env.var_env}}
       - name: Zip Release
         uses: TheDoctor0/zip-release@0.4.1
         with: 
@@ -48,5 +48,5 @@ jobs:
       - uses: actions/upload-artifact@v2
         with: 
           name: 'test3'
-          path: "test"
+          path: ${{env.var_env}}
 
