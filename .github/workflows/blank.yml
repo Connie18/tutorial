@@ -23,7 +23,7 @@ jobs:
       - name: Run a one-line script
         run: var=$(cat ./a.txt)
       - name: variable
-        run: echo $var
+        run: echo "$var"
       - name: Zip Release
         uses: TheDoctor0/zip-release@0.4.1
         with: 
