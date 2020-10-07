@@ -50,3 +50,8 @@ jobs:
           name: 'test3'
           path: "${{env.var_env}}"
 
+  run_powershell:
+    runs-on: windows-2019
+    steps:
+      - name: test_powershell
+        run: powershell .¥powershell¥test.ps1
