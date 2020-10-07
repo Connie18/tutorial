@@ -53,5 +53,6 @@ jobs:
   run_powershell:
     runs-on: windows-2019
     steps:
+      - uses: actions/checkout@v2
       - name: test_powershell
         run: powershell .¥PowerShell¥test.ps1
